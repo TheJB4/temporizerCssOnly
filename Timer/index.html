@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer in CSS ONLY</title>
+</head>
+
+    <style>
+        html{
+            box-sizing: border-box;
+        }
+
+        *,
+        *::after,
+        *::before{
+            box-sizing: inherit;
+            margin: 0;
+        }
+
+        .viewport{
+            width: 100vw;
+            height: 100vh;
+
+            background-color: red;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timer-conteiner{
+            background-color: white;
+            width: 80%;
+            height: 80%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .redondela-principal{
+            width: 300px;
+            height: 300px;
+
+
+            border: 20px solid #003954;
+            border-radius: 50%;
+
+            position: relative;
+        }
+
+        .redondela-principal::after{
+            content: "";
+            width: 200px;
+            height: 200px;
+
+            background-color: #6EC05E;
+
+            border-radius: 50%;
+
+            position: absolute;
+            top: 29px;
+            right: 0px;
+            left: 30px;
+            bottom: 0px;
+
+            z-index: 900;
+        }
+
+        
+        .redondela-principal::before{
+            content: "";
+            width: 43px;
+            height: 12px;
+
+            background-color: white;
+
+            border-radius: 10px;
+
+            position: absolute;
+            top: 125px;
+            right: 0px;
+            left: 20px;
+            bottom: 0px;
+
+            z-index: 901;
+        }
+
+        .aguja-1{
+            content: "";
+            width: 43px;
+            height: 12px;
+
+            background-color: white;
+
+            border-radius: 10px;
+
+            position: absolute;
+            top: 125px;
+            right: 0px;
+            left: 198px;
+            bottom: 0px;
+
+            z-index: 901;
+        }
+
+        .aguja-1::after{
+            content: "";
+            width: 43px;
+            height: 12px;
+
+            background-color: white;
+
+            border-radius: 10px;
+
+            position: absolute;
+            top: 86px;
+            right: 0px;
+            left: -89px;
+            bottom: 0px;
+
+            z-index: 901;
+
+            transform: rotate(270deg);
+        }
+
+        
+        .aguja-1::before{
+            content: "";
+            width: 43px;
+            height: 12px;
+
+            background-color: white;
+
+            border-radius: 10px;
+
+            position: absolute;
+            top: -86px;
+            right: 0px;
+            left: -89px;
+            bottom: 0px;
+
+            z-index: 901;
+
+            transform: rotate(270deg);
+        }
+    
+        .aguja-principio{
+            content: "";
+            width: 30px;
+            height: 30px;
+
+            background-color: #003954;
+
+            border-radius: 50%;
+
+            position: absolute;
+            top: 115px;
+            right: 0px;
+            left: 116px;
+            bottom: 0px;
+
+            z-index: 903;
+        }
+
+        .aguja-principio::after{
+            content: "";
+            width: 14px;
+            height: 61px;
+
+            background-color: #003954;
+
+            border-radius: 10px;
+
+            position: absolute;
+            top: -45px;
+            right: 0px;
+            left: 8px;
+            bottom: 0px;
+
+            transform-origin: 45% bottom;
+            z-index: 902;
+
+            animation: girar-a 60s linear infinite;
+        }
+
+        @keyframes girar-a {
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .parte-arriba{
+            width: 43px;
+            height: 26px;
+
+            background-color: #003954;
+
+            border-radius: 10px;
+
+            position: absolute;
+            top: -39px;
+            right: 0px;
+            left: 105px;
+            bottom: 0px;
+
+            transform: rotate(90deg);
+            z-index: 901;
+
+        }
+
+        .parte-arriba::after{
+            content: "";
+            width: 83px;
+            height: 24px;
+
+            background-color: #003954;
+
+            border-radius: 10px;
+
+            position: absolute;
+            top: -1px;
+            right: 5px;
+            left: -41px;
+            bottom: 0px;
+
+            transform: rotate(90deg);
+            z-index: 901;
+
+        }
+    </style>
+
+<body>
+    <div class="viewport">
+        <div class="timer-conteiner">
+            <div class="redondela-principal">
+                <div class="aguja-1"></div>
+                <div class="aguja-principio"></div>
+                <div class="parte-arriba"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
